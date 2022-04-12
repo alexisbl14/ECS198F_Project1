@@ -1,5 +1,6 @@
 package com.example.project1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.project1.databinding.ActivityMainBinding
@@ -68,5 +69,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         var view = binding.root
         setContentView(view)
+
+        var currentFoodTruck = foodTrucks[0]
+        binding.cardView.setOnClickListener {
+            var intent = Intent(this, FoodTruckDetail::class.java)
+            intent.putExtra("Name", currentFoodTruck)
+            startActivity(intent)
+        }
     }
 }
