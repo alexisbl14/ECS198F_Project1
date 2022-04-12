@@ -1,8 +1,9 @@
 package com.example.project1
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.project1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                     "government, healthcare and leisure", "https://www.starginger.com/"
         ),
         FoodTruck(
-            4, "Bangin Bowls", R.drawable.banginbowls, "Tercero DC",
+            4, "Bangin Bowls",  R.drawable.banginbowls, "Tercero DC",
             "2pm - 6pm", "We are a Latin fusion food truck buffet, inspired " +
                     "by South American and Caribbean food, to bring " +
                     "to our beloved city Sacramento something " +
@@ -70,11 +71,17 @@ class MainActivity : AppCompatActivity() {
         var view = binding.root
         setContentView(view)
 
-        var currentFoodTruck = foodTrucks[0]
+        /*var currentFoodTruck = foodTrucks[0]
         binding.cardView.setOnClickListener {
             var intent = Intent(this, FoodTruckDetail::class.java)
             intent.putExtra("Name", currentFoodTruck)
             startActivity(intent)
-        }
+        }*/
+        
+        val adapter = FoodTruckRecyclerViewAdapter(foodTrucks)
+        val mainRecyclerView = findViewById<RecyclerView>(R.id.mainRecyclerView)
+
+        mainRecyclerView.adapter = adapter
+        mainRecyclerView.layoutManager = LinearLayoutManager(this)
     }
 }

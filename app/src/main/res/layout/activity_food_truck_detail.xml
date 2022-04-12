@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/authenticstreettacos" />
+        app:srcCompat="@drawable/authenticstreettacos"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/nameTextView"
@@ -84,7 +85,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clockImageView"
-        app:srcCompat="@android:drawable/divider_horizontal_textfield" />
+        app:srcCompat="@android:drawable/divider_horizontal_textfield"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/linkTextView"

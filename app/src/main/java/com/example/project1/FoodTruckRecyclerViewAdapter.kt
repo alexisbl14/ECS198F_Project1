@@ -16,7 +16,6 @@ class FoodTruckRecyclerViewAdapter(private var foodTrucks: List<FoodTruck>)
         val timeTextView: TextView = itemView.findViewById(R.id.timeText)
         //val truckImageView: ImageView = itemView.findViewById(R.id.foodTruckImageView)
 
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
