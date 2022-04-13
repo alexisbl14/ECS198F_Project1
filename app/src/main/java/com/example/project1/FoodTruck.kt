@@ -1,7 +1,5 @@
 package com.example.project1
 
-
-
 class FoodTruck(
     var ID: Int,
     var foodTruckName: String,

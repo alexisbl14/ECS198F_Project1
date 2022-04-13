@@ -82,8 +82,8 @@
 
             <ImageView
                 android:id="@+id/foodTruckImageView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="383dp"
+                android:layout_height="267dp"
                 android:contentDescription="Image of food from food truck"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,6 @@
 package com.example.project1
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,8 +15,7 @@ class FoodTruckRecyclerViewAdapter(private var foodTrucks: List<FoodTruck>)
         val nameTextView: TextView = itemView.findViewById(R.id.foodTruckNameText)
         val locationTextView: TextView = itemView.findViewById(R.id.locationText)
         val timeTextView: TextView = itemView.findViewById(R.id.timeText)
-        //val truckImageView: ImageView = itemView.findViewById(R.id.foodTruckImageView)
-
+        val truckImageView: ImageView = itemView.findViewById(R.id.foodTruckImageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,7 +33,18 @@ class FoodTruckRecyclerViewAdapter(private var foodTrucks: List<FoodTruck>)
             nameTextView.text = foodTruck.foodTruckName
             locationTextView.text = foodTruck.location
             timeTextView.text = foodTruck.timeOpen
-            //truckImageView = foodTruck.foodTruckImage
+            truckImageView.setImageResource(foodTruck.foodTruckImage)
+        }
+
+        holder.itemView.setOnClickListener {
+            var intent = Intent(it.context, FoodTruckDetail::class.java)
+            intent.putExtra("Name", foodTruck.foodTruckName)
+            intent.putExtra("Description", foodTruck.foodTruckDescription)
+            intent.putExtra("Time", foodTruck.timeOpen)
+            intent.putExtra("Location", foodTruck.location)
+            intent.putExtra("Website", foodTruck.website)
+            intent.putExtra("Image", foodTruck.foodTruckImage)
+            it.context.startActivity(intent);
         }
     }
 

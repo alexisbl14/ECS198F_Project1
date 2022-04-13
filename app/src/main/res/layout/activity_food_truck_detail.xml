@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/foodImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="288dp"
+        android:layout_height="266dp"
         android:contentDescription="Image of food from food truck"
         android:scaleX="1"
         android:scaleY="1"

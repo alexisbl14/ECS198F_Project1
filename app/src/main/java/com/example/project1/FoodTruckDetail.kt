@@ -15,16 +15,17 @@ class FoodTruckDetail : AppCompatActivity() {
         setContentView(view)
 
         /*val currentFoodTruck = intent.getParcelableExtra<FoodTruck>("Name")
-        binding.foodImageView.setImageResource(currentFoodTruck!!.foodTruckImage)
-        binding.locationTextView.text = currentFoodTruck!!.location
-        binding.timeTextView.text = currentFoodTruck!!.timeOpen
-        binding.descriptionTextView.text = currentFoodTruck!!.foodTruckDescription
-
+        binding.foodImageView.setImageResource(currentFoodTruck!!.foodTruckImage)*/
+        binding.nameTextView.text = intent.getStringExtra("Name")!!
+        binding.locationTextView.text = intent.getStringExtra("Location")!!
+        binding.timeTextView.text = intent.getStringExtra("Time")!!
+        binding.descriptionTextView.text = intent.getStringExtra("Description")!!
+        binding.foodImageView.setImageResource(intent.getIntExtra("Image", 0)!!)
 
         binding.linkTextView.setOnClickListener {
-            val uri = Uri.parse(currentFoodTruck!!.website)
+            val uri = Uri.parse(intent.getStringExtra("Website")!!)
             val intentWebsite = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intentWebsite)
-        }*/
+        }
     }
 }

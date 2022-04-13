@@ -1,5 +1,6 @@
 package com.example.project1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("Name", currentFoodTruck)
             startActivity(intent)
         }*/
-        
+
         val adapter = FoodTruckRecyclerViewAdapter(foodTrucks)
         val mainRecyclerView = findViewById<RecyclerView>(R.id.mainRecyclerView)
 
